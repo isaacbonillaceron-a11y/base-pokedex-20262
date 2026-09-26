@@ -54,7 +54,7 @@ export function usePokemonList() {
           id: extractIdFromUrl(entry.url),
           name: entry.name,
           url: entry.url,
-        }));
+        })).filter((pokemon) => pokemon.id < 10000); /*Show only up to 1025*/
 
         if (!isCancelled) {
           setPokemonList(formattedList);
